@@ -12,9 +12,11 @@ The way in which I use them is to add this project as a submodule in git, and th
 
 When I do a `fab -l` in my directory, I get a list in the form of
 
-`EduardoMacBookPro:vagrant_research eduardoshanahan$ fab -l
+`
+EduardoMacBookPro:vagrant_research eduardoshanahan$ fab -l
 Available commands:
 
     scripts.call_vagrant                        Contact a Vagrant instance
     scripts.development.tools.install           Get some tools
-    scripts.docker.install                      Install Docker.io`
+    scripts.docker.install                      Install Docker.io
+`
