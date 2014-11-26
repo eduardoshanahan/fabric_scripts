@@ -6,7 +6,7 @@ I grew tired of copying files around for each project (and then losing track of 
 
 I am far from being a SysAdmin, and that is reflected in the quality of the scripts, but in some cases they are doing the trick (for my customers at least).
 
-The way in which I use them is to add this project as a submodule in git, and then create a fabfile.py in my parent directory with the content
+The way in which I use them is to add this project as a submodule in git, and then create a fabfile.py in my parent directory with the content:
 
 ```python
 from fabric_scripts import scripts
