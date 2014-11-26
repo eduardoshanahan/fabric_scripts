@@ -8,10 +8,10 @@ I am far from being a SysAdmin, and that is reflected in the quality of the scri
 
 The way in which I use them is to add this project as a submodule in git, and then create a fabfile.py in my parent directory with the content
 
-`from fabric_scripts import scripts`
-
-When I do a `fab -l` in my directory, I get a list in the form of
-
+```python
+from fabric_scripts import scripts
+```
+Then, when I do a `fab -l` in my directory, I get a list in the form of:
 
 ```
 EduardoMacBookPro:vagrant_research eduardoshanahan$ fab -l
