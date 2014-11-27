@@ -7,3 +7,4 @@ def install():
     Get some tools
     """
     sudo('npm install -g bunyan')
+    sudo('npm install -g nodemon')
