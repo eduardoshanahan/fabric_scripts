@@ -6,4 +6,4 @@ def install():
     """
     Get some tools
     """
-    sudo('apt-get install -y mysql-client-core-5.6')
+    sudo('apt-get install -y mysql-client-core-5.5')
