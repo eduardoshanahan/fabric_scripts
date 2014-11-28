@@ -11,7 +11,7 @@ def install():
     mySQL from package
     """
     sudo('apt-get install -y mysql-server')
-    sudo('service mysql start')
+    # sudo('service mysql start')
 
 
 @task

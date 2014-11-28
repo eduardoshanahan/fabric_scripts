@@ -58,9 +58,14 @@ Vagrant creates and fire up instances using Virtual Box. It is easy to configure
 
 Just follow the instrucctions on the page.
 
+
+* [Boto](https://pypi.python.org/pypi/boto/)
+
+`pip install boto' should be enough.
+
 * [Python Fabric](http://www.fabfile.org/installing.html)
 
-I installed Fabric using pip. After all is done, a call for `fab --version` should answer `Fabric 1.10.0 or newer`.
+I installed Fabric using pip (`pip install fabric`). After all is done, a call for `fab --version` should answer `Fabric 1.10.0 or newer`.
 
 After all the tools are installed, we are going to script the whole deployment makingFabric scripts. In the case of Vagrant, after the machine is fired up, you can install tools automatically, and doing that will require extra Vagrant tools. With an Ubuntu host, you might need a [plugin](https://github.com/wutali/vagrant-fabric) to do provisioning from Fabric
 
