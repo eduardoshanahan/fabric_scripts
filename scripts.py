@@ -10,6 +10,7 @@ from modules.mongo import mongo
 from modules.zeromq import zeromq
 from modules.java import java
 from modules.ec2 import ec2
+from modules.mysql import mysql
 
 
 @task
