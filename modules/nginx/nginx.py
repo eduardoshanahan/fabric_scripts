@@ -1,8 +1,8 @@
-from fabric.api import task
-from fabric.api import sudo
-from fabric.api import run
 from fabric.api import cd
 from fabric.api import put
+from fabric.api import run
+from fabric.api import sudo
+from fabric.api import task
 
 
 @task
@@ -39,7 +39,7 @@ def install():
         run('make')
         sudo('make install')
     run('rm -rf ~/tmp')
-    put('../etc-init.d-nginx', '/etc/init.d/nginx', use_sudo=True)
+    put('../configuration/etc-init.d-nginx', '/etc/init.d/nginx', use_sudo=True)
     sudo('chmod +x /etc/init.d/nginx')
     sudo('update-rc.d nginx defaults')
     sudo('service nginx start')
@@ -53,6 +53,6 @@ def configure():
     sudo('touch /opt/nginx/conf/nginx.conf')
     sudo('mkdir -p /opt/nginx/conf/backup')
     sudo('mv --backup=numbered /opt/nginx/conf/nginx.conf /opt/nginx/conf/backup')
-    put('../nginx.conf', '/opt/nginx/conf/nginx.conf', use_sudo=True)
+    put('../configuration/nginx.conf', '/opt/nginx/conf/nginx.conf', use_sudo=True)
     sudo('service nginx stop')
     sudo('service nginx start')
