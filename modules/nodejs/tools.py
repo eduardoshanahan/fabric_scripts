@@ -1,10 +1,11 @@
 from fabric.api import task
 from fabric.api import sudo
+from fabric.api import run
 
 @task
 def install():
     """
     Get some tools
     """
-    sudo('npm install -g bunyan')
-    sudo('npm install -g nodemon')
+    run('npm install -g bunyan')
+    run('npm install -g nodemon')
