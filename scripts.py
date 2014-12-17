@@ -1,16 +1,17 @@
 from fabric.api import task
+from modules.development import development
+from modules.docker import docker
+from modules.ec2 import ec2
+from modules.java import java
+from modules.mongo import mongo
+from modules.mysql import mysql
+from modules.nginx import nginx
+from modules.nodejs import nodejs
+from modules.python import python
+from modules.redis import redis
 from modules.ubuntu import ubuntu
 from modules.vagrant import vagrant
-from modules.development import development
-from modules.nginx import nginx
-from modules.python import python
-from modules.docker import docker
-from modules.nodejs import nodejs
-from modules.mongo import mongo
 from modules.zeromq import zeromq
-from modules.java import java
-from modules.ec2 import ec2
-from modules.mysql import mysql
 
 
 @task

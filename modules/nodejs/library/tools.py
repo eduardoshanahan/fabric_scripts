@@ -7,9 +7,5 @@ def install():
     """
     Install all the tools available
     """
-    pip.install()
-    docopt.install()
-    pyzmq.install()
-    python_dev.install()
-    redis.install()
-    watchdog.install()
+    bunyan.install()
+    nodemon.install()
