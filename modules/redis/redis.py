@@ -1,5 +1,6 @@
 from fabric.api import task
 from fabric.api import run
+from fabric.api import sudo
 
 
 @task
