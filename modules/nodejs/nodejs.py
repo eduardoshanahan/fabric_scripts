@@ -12,6 +12,8 @@ def install():
     """
     NodeJS from external package
     """
+    run('echo prefix = ~/.node >> ~/.npmrc')
+    run('echo export PATH="$PATH:$HOME/.node/bin" >> ~/.bashrc')
     sudo('apt-get install -y python-software-properties')
     sudo('apt-get install -y software-properties-common')
     sudo('add-apt-repository -y ppa:chris-lea/node.js')
