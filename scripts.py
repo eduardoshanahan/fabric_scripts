@@ -4,6 +4,7 @@ from modules.development import development
 from modules.docker import docker
 from modules.ec2 import ec2
 from modules.java import java
+from modules.kafka import kafka
 from modules.mongo import mongo
 from modules.mysql import mysql
 from modules.nginx import nginx
@@ -11,6 +12,7 @@ from modules.nodejs import nodejs
 from modules.php import php
 from modules.python import python
 from modules.redis import redis
+from modules.scala import scala
 from modules.ubuntu import ubuntu
 from modules.vagrant import vagrant
 from modules.zeromq import zeromq
