@@ -1,6 +1,8 @@
+from fabric.api import cd
 from fabric.api import task
 from fabric.api import run
 from fabric.api import sudo
+from fabric.contrib.files import sed
 
 
 @task
@@ -22,7 +24,7 @@ def install():
         sudo('make install')
         sudo('cp ./utils/redis_init_script /etc/init.d/redis_6379')
         sudo('cp ./redis.conf /etc/redis/6379.conf')
-    rm('rm -rf ~/tmp')
+    run('rm -rf ~/tmp')
     sed('/etc/redis/6379.conf', 'daemonize no', 'daemonize yes',
         use_sudo=True)
     sed('/etc/redis/6379.conf', 'pidfile /var/run/redis.pid',

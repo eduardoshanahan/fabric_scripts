@@ -1,4 +1,5 @@
 from fabric.api import task
+from modules.apache import apache
 from modules.development import development
 from modules.docker import docker
 from modules.ec2 import ec2
@@ -7,6 +8,7 @@ from modules.mongo import mongo
 from modules.mysql import mysql
 from modules.nginx import nginx
 from modules.nodejs import nodejs
+from modules.php import php
 from modules.python import python
 from modules.redis import redis
 from modules.ubuntu import ubuntu
