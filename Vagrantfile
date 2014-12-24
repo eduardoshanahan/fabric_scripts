@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.provider :virtualbox do |vb|
         vb.name = "fabric_scripts"
-        vb.customize ["modifyvm", :id, "--memory", "512"]
+        vb.customize ["modifyvm", :id, "--memory", "2048"]
     end
 
     config.vm.provision :fabric do |fabric|
