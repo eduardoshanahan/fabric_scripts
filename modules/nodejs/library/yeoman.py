@@ -11,7 +11,7 @@ def install():
 
 
 @task
-def generator_yeoman():
+def generators():
     """
     Generators for Yeoman
     """

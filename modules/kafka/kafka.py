@@ -6,6 +6,8 @@ from fabric.api import env
 
 
 env.kafka_version = '0.8.2-beta'
+env.kafka_path = '/opt/kafka'
+env.scala_version = '2.11.4'
 
 @task
 def install():
