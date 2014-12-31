@@ -18,3 +18,10 @@ def install():
     sudo('apt-get update')
     sudo('apt-get install -y scala')
  
+
+ # @task
+ # def full_install():
+ #    """
+ #    Get the requirements and install
+ #    """
+    
