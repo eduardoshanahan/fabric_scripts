@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.define :"fabric_scripts"
 
-    config.vm.synced_folder "../", "/home/vagrant/code"
+    config.vm.synced_folder ".", "/home/vagrant/code"
 
     config.vm.network "forwarded_port", guest: 80, host: 8080
 

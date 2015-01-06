@@ -3,8 +3,8 @@ from fabric.api import sudo
 
 
 @task
-def install_development_tools():
+def install():
     """
-    Compilers
+    From package
     """
-    sudo('apt-get install dtach')
+    sudo('apt-get install -y g++')

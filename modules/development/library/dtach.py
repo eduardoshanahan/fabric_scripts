@@ -5,6 +5,6 @@ from fabric.api import sudo
 @task
 def install():
     """
-    From package
+    Compilers
     """
-    sudo('apt-get install build-essential g++')
+    sudo('apt-get install dtach')

@@ -1,14 +1,18 @@
 from fabric.api import cd
+from fabric.api import env
+from fabric.api import local
 from fabric.api import put
 from fabric.api import run
 from fabric.api import sudo
 from fabric.api import task
 
 
+env.nginx_configuration_directory = 'configuration/nginx'
+
 @task
-def install():
+def install(configuration=env.nginx_configuration_directory):
     """
-    Nginx from source
+    Nginx from source (you can add :configuration='configuration files directory')
     """
     version = '1.4.1'
     url = 'http://nginx.org/download/nginx-{0}.tar.gz'.format(version)
@@ -39,20 +43,20 @@ def install():
         run('make')
         sudo('make install')
     run('rm -rf ~/tmp')
-    put('../configuration/etc-init.d-nginx', '/etc/init.d/nginx', use_sudo=True)
+    put('{0}/etc-init.d-nginx'.format(configuration), '/etc/init.d/nginx', use_sudo=True)
     sudo('chmod +x /etc/init.d/nginx')
     sudo('update-rc.d nginx defaults')
     sudo('service nginx start')
 
 
 @task
-def configure():
+def configure(configuration=env.nginx_configuration_directory):
     """
-    Create the config file to host the application
+    Create the config file to host the application (you can add :configuration='configuration files directory')
     """
     sudo('touch /opt/nginx/conf/nginx.conf')
     sudo('mkdir -p /opt/nginx/conf/backup')
     sudo('mv --backup=numbered /opt/nginx/conf/nginx.conf /opt/nginx/conf/backup')
-    put('../configuration/nginx.conf', '/opt/nginx/conf/nginx.conf', use_sudo=True)
+    put('{0}/nginx.conf'.format(configuration), '/opt/nginx/conf/nginx.conf', use_sudo=True)
     sudo('service nginx stop')
     sudo('service nginx start')
