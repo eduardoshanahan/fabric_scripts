@@ -2,9 +2,12 @@ from fabric.api import task
 from fabric.api import run
 from fabric.api import sudo
 from fabric.api import env
+from library import bower
 from library import bunyan
+from library import grunt
 from library import nodemon
 from library import tools
+from library import yeoman
 
 
 @task
