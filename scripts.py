@@ -20,7 +20,6 @@ from modules.ubuntu import ubuntu
 from modules.vagrant import vagrant
 from modules.zeromq import zeromq
 
-
 @task
 def call_vagrant():
     """
@@ -28,5 +27,3 @@ def call_vagrant():
     """
     env_details = vagrant.set_env()
     ubuntu.init(env_details)
-
-
