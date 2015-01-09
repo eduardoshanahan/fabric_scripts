@@ -5,6 +5,7 @@ from fabric.api import env
 from library.host import type
 from library.packages import cleanup
 from library.packages import update
+from library.packages import fix
 
 
 def init(env_details):

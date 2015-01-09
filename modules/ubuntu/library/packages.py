@@ -27,3 +27,13 @@ def update():
           '-o Dpkg::Options::="--force-confdef" '
           '-o Dpkg::Options::="--force-confold" dist-upgrade'))
     run('rm -rf ~/tmp')
+
+@task
+def fix():
+    """
+    Fix unsigned packages
+    """
+    sudo('apt-get clean')
+    sudo('mv /var/lib/apt/lists /var/lib/apt/lists.broke')
+    sudo('mkdir -p /var/lib/apt/lists/partial')
+    sudo('apt-get update')
