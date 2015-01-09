@@ -12,6 +12,7 @@ def install():
     sudo('apt-get install -y libapache2-mod-php5')
     sudo('apt-get install -y php5-mcrypt')
 
+
 @task
 def configure():
     """
@@ -23,8 +24,9 @@ def configure():
         use_sudo=True)
     sudo('service apache2 restart')
 
+
 @task
-def full_install():
+def full():
     """
     Get PHP configured in Apache
     """

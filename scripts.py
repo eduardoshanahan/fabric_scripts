@@ -16,14 +16,15 @@ from modules.python import python
 from modules.redis import redis
 from modules.ruby import ruby
 from modules.scala import scala
+from modules.stridercd import stridercd
 from modules.ubuntu import ubuntu
 from modules.vagrant import vagrant
 from modules.zeromq import zeromq
 
-@task
-def call_vagrant():
-    """
-    Contact a Vagrant instance
-    """
-    env_details = vagrant.set_env()
-    ubuntu.init(env_details)
+# @task
+# def call_vagrant():
+#     """
+#     Contact a Vagrant instance
+#     """
+#     env_details = vagrant.set_env()
+#     ubuntu.init(env_details)

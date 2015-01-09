@@ -15,6 +15,6 @@ Vagrant.configure("2") do |config|
 
     config.vm.provision :fabric do |fabric|
         fabric.fabfile_path = "fabfile.py"
-        fabric.tasks = []
+        fabric.tasks = ["scripts.ubuntu.cleanup"]
     end
 end
