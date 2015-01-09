@@ -18,6 +18,9 @@ def set_env():
 
 @task
 def connect():
+    """
+    Apply Vagrant credentials to the SSH session
+    """
     from .. import ubuntu
     env_details = set_env()
     ubuntu.ubuntu.init(env_details)

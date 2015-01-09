@@ -7,6 +7,6 @@ def install():
     """
     Git from the ppa
     """
-    sudo('add-apt-repository ppa:git-core/ppa')
+    sudo('add-apt-repository -y ppa:git-core/ppa')
     sudo('apt-get update')
     sudo('apt-get install git')

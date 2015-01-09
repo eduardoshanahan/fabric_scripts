@@ -1,7 +1,5 @@
 from fabric.api import task
 from fabric.api import sudo
-from .. import mongo
-from .. import nodejs
 
 
 @task
@@ -17,6 +15,10 @@ def full():
     """
     StriderCD with all required dependencies
     """
+    from .. import git
+    from .. import mongo
+    from .. import nodejs
+    git.git.install()
     nodejs.nodejs.install()
-    mongo.install()
+    mongo.mongo.install()
     install()
