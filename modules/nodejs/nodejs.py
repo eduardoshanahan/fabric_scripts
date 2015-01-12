@@ -22,3 +22,4 @@ def install():
     sudo('add-apt-repository -y ppa:chris-lea/node.js')
     sudo('apt-get update')
     sudo('apt-get install -y nodejs')
+    run('mkdir -p .node')

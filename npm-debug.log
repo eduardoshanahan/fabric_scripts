@@ -1,0 +1,259 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'strider' ]
+2 info using npm@2.1.6
+3 info using node@v0.10.33
+4 silly cache add args [ 'strider', null ]
+5 verbose cache add spec strider
+6 silly cache add parsed spec { raw: 'strider',
+6 silly cache add   scope: null,
+6 silly cache add   name: 'strider',
+6 silly cache add   rawSpec: '',
+6 silly cache add   spec: '*',
+6 silly cache add   type: 'range' }
+7 verbose addNamed strider@*
+8 silly addNamed semver.valid null
+9 silly addNamed semver.validRange *
+10 silly addNameRange { name: 'strider', range: '*', hasData: false }
+11 verbose mapToRegistry name strider
+12 verbose mapToRegistry uri https://registry.npmjs.org/strider
+13 verbose addNameRange registry:https://registry.npmjs.org/strider not in flight; fetching
+14 silly addNameRange number 2 { name: 'strider', range: '*', hasData: true }
+15 silly addNameRange versions [ 'strider',
+15 silly addNameRange   [ '1.0.0',
+15 silly addNameRange     '1.0.1',
+15 silly addNameRange     '1.1.0',
+15 silly addNameRange     '1.1.1',
+15 silly addNameRange     '1.1.2',
+15 silly addNameRange     '1.2.0',
+15 silly addNameRange     '1.2.1',
+15 silly addNameRange     '1.2.2',
+15 silly addNameRange     '1.2.3',
+15 silly addNameRange     '1.2.4',
+15 silly addNameRange     '1.2.5',
+15 silly addNameRange     '1.2.6',
+15 silly addNameRange     '1.2.7',
+15 silly addNameRange     '1.2.8',
+15 silly addNameRange     '1.2.9',
+15 silly addNameRange     '1.2.10',
+15 silly addNameRange     '1.2.11',
+15 silly addNameRange     '1.2.12',
+15 silly addNameRange     '1.2.13',
+15 silly addNameRange     '1.2.14',
+15 silly addNameRange     '1.2.15',
+15 silly addNameRange     '1.2.16',
+15 silly addNameRange     '1.3.0',
+15 silly addNameRange     '1.3.1',
+15 silly addNameRange     '1.3.2',
+15 silly addNameRange     '1.3.3',
+15 silly addNameRange     '1.3.4',
+15 silly addNameRange     '1.3.5',
+15 silly addNameRange     '1.4.0',
+15 silly addNameRange     '1.4.1',
+15 silly addNameRange     '1.4.2',
+15 silly addNameRange     '1.4.3',
+15 silly addNameRange     '1.4.4',
+15 silly addNameRange     '1.4.5',
+15 silly addNameRange     '1.5.0',
+15 silly addNameRange     '1.6.0' ] ]
+16 verbose addNamed strider@1.6.0
+17 silly addNamed semver.valid 1.6.0
+18 silly addNamed semver.validRange 1.6.0
+19 verbose addRemoteTarball https://registry.npmjs.org/strider/-/strider-1.6.0.tgz not in flight; adding
+20 verbose addRemoteTarball [ 'https://registry.npmjs.org/strider/-/strider-1.6.0.tgz',
+20 verbose addRemoteTarball   'dd7de7b1976178dc03057caa6394f9438f42970e' ]
+21 info retry fetch attempt 1 at 11:59:46
+22 silly fetchAndShaCheck shasum dd7de7b1976178dc03057caa6394f9438f42970e
+23 verbose addTmpTarball /var/folders/wn/rghw75655z597f6cm659r3rr0000gn/T/npm-13492-96516fd3/registry.npmjs.org/strider/-/strider-1.6.0.tgz not in flight; adding
+24 verbose addTmpTarball already have metadata; skipping unpack for strider@1.6.0
+25 silly cache afterAdd strider@1.6.0
+26 verbose afterAdd /Users/eduardoshanahan/.npm/strider/1.6.0/package/package.json not in flight; writing
+27 verbose afterAdd /Users/eduardoshanahan/.npm/strider/1.6.0/package/package.json written
+28 silly install resolved [ { name: 'strider',
+28 silly install resolved     version: '1.6.0',
+28 silly install resolved     bin: { strider: 'bin/strider' },
+28 silly install resolved     main: 'main.js',
+28 silly install resolved     description: 'Brilliant continuous deployment platform',
+28 silly install resolved     keywords:
+28 silly install resolved      [ 'strider',
+28 silly install resolved        'continuous integration',
+28 silly install resolved        'continuous deployment',
+28 silly install resolved        'testing',
+28 silly install resolved        'deployment' ],
+28 silly install resolved     engines: { node: '> 0.8.x', npm: '>1.4.0 <3.0.0' },
+28 silly install resolved     repository: { type: 'git', url: 'git://github.com/Strider-CD/strider.git' },
+28 silly install resolved     browser:
+28 silly install resolved      { bootstrap: './bower_components/bootstrap/docs/assets/js/bootstrap.js',
+28 silly install resolved        sortable: './bower_components/Sortable/Sortable.js',
+28 silly install resolved        bootbox: './bower_components/bootbox/bootbox.js',
+28 silly install resolved        codemirror: './bower_components/codemirror/lib/codemirror.js',
+28 silly install resolved        'codemirror-shell': './bower_components/codemirror/mode/shell/shell.js',
+28 silly install resolved        timeago: './bower_components/jquery-timeago/jquery.timeago.js',
+28 silly install resolved        'ui-codemirror': './public/libs/ui-codemirror.js',
+28 silly install resolved        'ui-bootstrap': './public/libs/ui-bootstrap.js',
+28 silly install resolved        'ui-sortable': './public/libs/ui-sortable.js' },
+28 silly install resolved     'browserify-shim': './shim.js',
+28 silly install resolved     browserify: { transform: [Object] },
+28 silly install resolved     scripts:
+28 silly install resolved      { test: 'make test',
+28 silly install resolved        start: 'bin/strider',
+28 silly install resolved        dev: 'npm run build-debug && bin/strider',
+28 silly install resolved        postinstall: 'bower install --config.interactive=false --allow-root && npm run build',
+28 silly install resolved        pre: 'mkdirp dist/scripts dist/styles',
+28 silly install resolved        styles: 'lessc client/styles/strider.less > dist/styles/styles.css',
+28 silly install resolved        'styles-debug': 'lessc --source-map client/styles/strider.less dist/styles/styles.css',
+28 silly install resolved        watch: 'npm run pre && watchify -e client/app.js -o dist/scripts/app.js',
+28 silly install resolved        build: 'npm run pre && npm run styles && browserify -e client/app.js -o dist/scripts/app.js',
+28 silly install resolved        'build-debug': 'npm run pre && npm run styles-debug && browserify -d -e client/app.js -o dist/scripts/app.js',
+28 silly install resolved        unitcov: 'istanbul cover _mocha --recursive test/unit',
+28 silly install resolved        unitdev: 'mocha -w --recursive test/unit -R min' },
+28 silly install resolved     dependencies:
+28 silly install resolved      { MD5: '^1.2.1',
+28 silly install resolved        angular: '1.2.23',
+28 silly install resolved        'angular-route': '1.2.17-build.163.1',
+28 silly install resolved        ansiparse: '0.0.5-1',
+28 silly install resolved        async: '^0.9.0',
+28 silly install resolved        bcrypt: '^0.8.0',
+28 silly install resolved        bluebird: '^2.3.2',
+28 silly install resolved        'body-parser': '^1.10.0',
+28 silly install resolved        'cli-table': '^0.3.0',
+28 silly install resolved        compression: '^1.2.2',
+28 silly install resolved        connect: '^2.17.3',
+28 silly install resolved        'connect-flash': '^0.1.1',
+28 silly install resolved        'connect-mongo': '^0.4.2',
+28 silly install resolved        'connect-slashes': '0.0.11',
+28 silly install resolved        consolidate: '0.10.0',
+28 silly install resolved        cookie: '0.0.5',
+28 silly install resolved        'cookie-parser': '^1.3.3',
+28 silly install resolved        cors: '^2.5.2',
+28 silly install resolved        errorhandler: '^1.3.0',
+28 silly install resolved        eventemitter2: '0.4.14',
+28 silly install resolved        everypaas: '0.0.x',
+28 silly install resolved        express: '^4.10.6',
+28 silly install resolved        'express-session': '^1.9.3',
+28 silly install resolved        extend: '^1.3.0',
+28 silly install resolved        gravatar: '^1.1.0',
+28 silly install resolved        httpcheck: '0.0.1',
+28 silly install resolved        jade: '^0.35.0',
+28 silly install resolved        jquery: '^1.11.1',
+28 silly install resolved        lodash: '^2.4.1',
+28 silly install resolved        loggly: '^0.3.11',
+28 silly install resolved        mailer: '^0.6.7',
+28 silly install resolved        'method-override': '^2.3.0',
+28 silly install resolved        moment: '^2.8.3',
+28 silly install resolved        mongoose: '^3.8.17',
+28 silly install resolved        morgan: '^1.5.0',
+28 silly install resolved        nodemailer: '^0.6.5',
+28 silly install resolved        passport: '^0.2.0',
+28 silly install resolved        'passport-local': '^1.0.0',
+28 silly install resolved        pw: '0.0.4',
+28 silly install resolved        rc: '^0.5.1',
+28 silly install resolved        request: '^2.49.0',
+28 silly install resolved        semver: '^4.1.0',
+28 silly install resolved        'serve-favicon': '^2.2.0',
+28 silly install resolved        'socket.io': '^1.2.1',
+28 silly install resolved        'socket.io-client': '^1.0.6',
+28 silly install resolved        'ssh-keypair': '^1.0.1',
+28 silly install resolved        step: '0.0.5',
+28 silly install resolved        'strider-bitbucket': '^1.0.3',
+28 silly install resolved        'strider-build-badge': '^0',
+28 silly install resolved        'strider-cli': '^1.4.0',
+28 silly install resolved        'strider-custom': '^0.5.3',
+28 silly install resolved        'strider-email-notifier': '^0.4.2',
+28 silly install resolved        'strider-env': '^0.4.4',
+28 silly install resolved        'strider-extension-loader': '^0.4.3',
+28 silly install resolved        'strider-git': '^0.2.0',
+28 silly install resolved        'strider-github': '^1.3.0',
+28 silly install resolved        'strider-gitlab': '^1.0.1',
+28 silly install resolved        'strider-heroku': '^0.1.1',
+28 silly install resolved        'strider-mailer': '^0.2.0',
+28 silly install resolved        'strider-metadata': '^0.0.1',
+28 silly install resolved        'strider-node': '^0.3.5',
+28 silly install resolved        'strider-python': '^0.2.1',
+28 silly install resolved        'strider-ruby': '^0.0.2',
+28 silly install resolved        'strider-simple-runner': '^0.13.1',
+28 silly install resolved        'strider-slack': '^2.0.0',
+28 silly install resolved        'strider-ssh-deploy': '^0.4.0',
+28 silly install resolved        stylus: '^0.49.1',
+28 silly install resolved        superagent: '^0.21.0',
+28 silly install resolved        swig: '^0.14.0',
+28 silly install resolved        'thirty-two': '0.0.2',
+28 silly install resolved        validator: '^3.22.1',
+28 silly install resolved        winston: '^0.8.0' },
+28 silly install resolved     devDependencies:
+28 silly install resolved      { blanket: '^1.1.5',
+28 silly install resolved        bower: '^1.3.12',
+28 silly install resolved        browserify: '^6.3.3',
+28 silly install resolved        'browserify-shim': '^3.8.0',
+28 silly install resolved        chai: '^1.9.2',
+28 silly install resolved        'chai-as-promised': '^4.1.0',
+28 silly install resolved        commander: '>=0.5.2',
+28 silly install resolved        'expect.js': '^0.3.1',
+28 silly install resolved        jshint: '^2.5.6',
+28 silly install resolved        less: '^1.7.5',
+28 silly install resolved        mkdirp: '^0.5.0',
+28 silly install resolved        mocha: '^1.21.4',
+28 silly install resolved        'mocha-as-promised': '^2.0.0',
+28 silly install resolved        'path-to-regexp': '^1.0.2',
+28 silly install resolved        should: '^2.1.0',
+28 silly install resolved        sinon: '^1.10.3',
+28 silly install resolved        watchify: '^0.10.2',
+28 silly install resolved        wd: '^0.3.8' },
+28 silly install resolved     gitHead: '9e3a83cfe1708db6e9cf7202b67a389b12067632',
+28 silly install resolved     bugs: { url: 'https://github.com/Strider-CD/strider/issues' },
+28 silly install resolved     homepage: 'https://github.com/Strider-CD/strider',
+28 silly install resolved     _id: 'strider@1.6.0',
+28 silly install resolved     _shasum: 'dd7de7b1976178dc03057caa6394f9438f42970e',
+28 silly install resolved     _from: 'strider@*',
+28 silly install resolved     _npmVersion: '1.4.28',
+28 silly install resolved     _npmUser: { name: 'niallo', email: 'niallo@frozenridge.co' },
+28 silly install resolved     maintainers: [ [Object], [Object] ],
+28 silly install resolved     dist:
+28 silly install resolved      { shasum: 'dd7de7b1976178dc03057caa6394f9438f42970e',
+28 silly install resolved        tarball: 'http://registry.npmjs.org/strider/-/strider-1.6.0.tgz' },
+28 silly install resolved     directories: {},
+28 silly install resolved     _resolved: 'https://registry.npmjs.org/strider/-/strider-1.6.0.tgz' } ]
+29 info install strider@1.6.0 into /usr/local/lib
+30 info installOne strider@1.6.0
+31 verbose installOne of strider to /usr/local/lib not in flight; installing
+32 verbose lock using /Users/eduardoshanahan/.npm/_locks/strider-d88e2506d70ed7a9.lock for /usr/local/lib/node_modules/strider
+33 silly install write writing strider 1.6.0 to /usr/local/lib/node_modules/strider
+34 silly cache addNamed cb strider@1.6.0
+35 verbose unbuild lib/node_modules/strider
+36 verbose gentlyRm vacuuming /usr/local/lib/node_modules/strider
+37 verbose tar unpack /Users/eduardoshanahan/.npm/strider/1.6.0/package.tgz
+38 verbose tar unpacking to /usr/local/lib/node_modules/strider
+39 verbose gentlyRm vacuuming /usr/local/lib/node_modules/strider
+40 silly gunzTarPerm modes [ '755', '644' ]
+41 error tar.unpack untar error /Users/eduardoshanahan/.npm/strider/1.6.0/package.tgz
+42 verbose unlock done using /Users/eduardoshanahan/.npm/_locks/strider-d88e2506d70ed7a9.lock for /usr/local/lib/node_modules/strider
+43 verbose fstream_path /usr/local/lib/node_modules/strider
+44 verbose fstream_type Directory
+45 verbose fstream_class DirWriter
+46 verbose stack Error: EACCES, mkdir '/usr/local/lib/node_modules/strider'
+47 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/tar/node_modules/fstream/lib/dir-writer.js:36:23
+47 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/tar/node_modules/fstream/node_modules/mkdirp/index.js:46:53
+47 verbose fstream_stack Object.oncomplete (fs.js:107:15)
+48 verbose cwd /Users/eduardoshanahan/git/Personal/Projects/106 Monkeys/fabric_scripts
+49 error Darwin 14.0.0
+50 error argv "node" "/usr/local/bin/npm" "install" "-g" "strider"
+51 error node v0.10.33
+52 error npm  v2.1.6
+53 error path /usr/local/lib/node_modules/strider
+54 error code EACCES
+55 error errno 3
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/strider'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/strider']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/strider',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/strider',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/tar/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/tar/node_modules/fstream/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:107:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 verbose exit [ 3, true ]
+59 verbose unbuild lib/node_modules/strider
+60 verbose gentlyRm vacuuming /usr/local/lib/node_modules/strider
