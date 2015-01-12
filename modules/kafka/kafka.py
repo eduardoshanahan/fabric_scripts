@@ -17,11 +17,11 @@ def install():
     sudo('rm -rf {0}'.format(env.kafka_path))
     sudo('mkdir -p {0}'.format(env.kafka_path))
     sudo('chmod a+rw {0}'.format(env.kafka_path))
-    run('wget http://apache.xfree.com.ar/kafka/{0}/kafka_{1}-{0}.tgz'.format(env.kafka_version, env.kafka_scala_version))
-    sudo('tar zxvf kafka_{0}-{1}.tgz -C {2}'.format(env.kafka_scala_version, env.kafka_version, env.kafka_path))
-    run('rm ~/kafka_{0}-{1}.tgz'.format(env.kafka_scala_version,env.kafka_version))
-    sudo('mv {0}/kafka_{1}-{2}/* {0}'.format(env.kafka_path, env.kafka_scala_version, env.kafka_version))
-    sudo('rm -rf {0}/kafka_{1}_{2}'.format(env.kafka_path, env.kafka_scala_version, env.kafka_version))
+    run('wget http://apache.xfree.com.ar/kafka/{0}/kafka_{1}-{0}.tgz'.format(env.kafka_version, env.scala_version))
+    sudo('tar zxvf kafka_{0}-{1}.tgz -C {2}'.format(env.scala_version, env.kafka_version, env.kafka_path))
+    run('rm ~/kafka_{0}-{1}.tgz'.format(env.scala_version,env.kafka_version))
+    sudo('mv {0}/kafka_{1}-{2}/* {0}'.format(env.kafka_path, env.scala_version, env.kafka_version))
+    sudo('rm -rf {0}/kafka_{1}_{2}'.format(env.kafka_path, env.scala_version, env.kafka_version))
 
 
 @task
