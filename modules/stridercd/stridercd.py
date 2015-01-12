@@ -11,7 +11,7 @@ def install():
     # sudo('useradd -s /bin/bash -m -d /home/strider -c "strider" strider')
     # sudo('usermod -aG sudo strider')
     run('npm install -g strider@1.5.0')
-    # run('node strider addUser -l contact@eduardoshanahan.com -p supersecret -a')
+    # run('strider addUser -l contact@eduardoshanahan.com -p supersecret -a')
 
 
 @task
