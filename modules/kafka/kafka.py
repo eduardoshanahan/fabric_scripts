@@ -5,7 +5,7 @@ from fabric.api import sudo
 from fabric.api import task
 
 env.kafka_version = '0.8.2-beta'
-env.kafka_path = '/opt/kafka'
+env.kafka_path = '/usr/lib/kafka'
 env.kafka_scala_version = '2.11'
 
 
@@ -25,6 +25,14 @@ def install():
 
 
 @task
+def configure():
+    """
+    Add upstart jobs for zookeeper and kafka
+    """
+
+
+
+@task
 def full():
     """
     Get all the requirements first
@@ -34,17 +42,20 @@ def full():
     from .. import java
     java.java.oracle.jdk.install()
     install()
+    configure()
+    # sudo('start zookeeper')
+    # sudo('start kafka')
 
 
-@task
-def start():
-    """
-    Start zookeeper and kafka
-    """
-    from .. import development
-    with cd(env.kafka_path):
-        development.development.dtach.runbg('nohup bin/zookeeper-server-start.sh config/zookeeper.properties')
-        development.development.dtach.runbg('nohup bin/kafka-server-start.sh config/server.properties')
+# @task
+# def start():
+#     """
+#     Start zookeeper and kafka
+#     """
+#     from .. import development
+#     with cd(env.kafka_path):
+#         development.development.dtach.runbg('nohup bin/zookeeper-server-start.sh config/zookeeper.properties')
+#         development.development.dtach.runbg('nohup bin/kafka-server-start.sh config/server.properties')
 
 
 @task
