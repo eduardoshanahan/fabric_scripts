@@ -43,10 +43,8 @@ def install(configuration=env.nginx_configuration_directory):
         run('make')
         sudo('make install')
     run('rm -rf ~/tmp')
-    put('{0}/etc-init.d-nginx'.format(configuration), '/etc/init.d/nginx', use_sudo=True)
-    sudo('chmod +x /etc/init.d/nginx')
-    sudo('update-rc.d nginx defaults')
-    sudo('service nginx start')
+
+
 
 
 @task
@@ -57,6 +55,7 @@ def configure(configuration=env.nginx_configuration_directory):
     sudo('touch /opt/nginx/conf/nginx.conf')
     sudo('mkdir -p /opt/nginx/conf/backup')
     sudo('mv --backup=numbered /opt/nginx/conf/nginx.conf /opt/nginx/conf/backup')
-    put('{0}/nginx.conf'.format(configuration), '/opt/nginx/conf/nginx.conf', use_sudo=True)
-    sudo('service nginx stop')
-    sudo('service nginx start')
+    put('{0}/opt/nginx/conf/nginx.conf'.format(configuration), '/opt/nginx/conf/nginx.conf', use_sudo=True)
+    sudo('initctl stop nginx', warn_only=True)
+    put('{0}/etc/init/nginx.conf'.format(configuration), '/etc/init/nginx.conf', use_sudo=True)
+    sudo('initctl start nginx')
