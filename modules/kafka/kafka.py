@@ -39,7 +39,7 @@ def ensure_fresh_directory(path):
 @task
 def configure(configuration=env.kafka_configuration_directory):
     """
-    Add upstart jobs for zookeeper and kafka
+    Add upstart jobs for zookeeper and kafka (you can add :configuration='configuration files directory')
     """
     pass_configuration(configuration, 'kafka_zookeeper')
     pass_configuration(configuration, 'kafka')
@@ -58,14 +58,14 @@ def pass_configuration(configuration_path, application_name):
 
 
 @task
-def full():
+def full(configuration=env.kafka_configuration_directory):
     """
-    Get all the requirements first
+    Install with requirements and configure (you can add :configuration='configuration files directory')
     """
     from .. import java
     java.java.oracle.jdk.install()
     install()
-    configure()
+    configure(configuration)
 
 
 @task
