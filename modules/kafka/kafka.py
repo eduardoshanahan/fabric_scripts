@@ -58,7 +58,7 @@ def configure_properties(configuration_path, application_name):
     """
     Put the Java properties file in place
     """
-    put('{0}/etc/kafka/{1}.conf'.format(configuration_path, application_name), '/etc/kafka/{0}.conf'.format(application_name), use_sudo=True)
+    put('{0}/etc/kafka/{1}.properties'.format(configuration_path, application_name), '/etc/kafka/{0}.properties'.format(application_name), use_sudo=True)
 
 
 @task
