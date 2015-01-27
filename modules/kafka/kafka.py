@@ -24,9 +24,7 @@ def install():
     run('rm ~/kafka_{0}-{1}.tgz'.format(env.kafka_scala_version,env.kafka_version))
     sudo('mv {0}/kafka_{1}-{2}/* {0}'.format(env.kafka_path, env.kafka_scala_version, env.kafka_version))
     sudo('rm -rf {0}/kafka_{1}-{2}'.format(env.kafka_path, env.kafka_scala_version, env.kafka_version))
-    ensure_fresh_directory(env.kafka_config_path)
-    sudo('mv {0}/config/server.properties {1}'.format(env.kafka_path, env.kafka_config_path))
-    sudo('mv {0}/config/zookeeper.properties {1}'.format(env.kafka_path, env.kafka_config_path))
+
 
 def ensure_fresh_directory(path):
     """
@@ -41,7 +39,9 @@ def configure(configuration=env.kafka_configuration_directory):
     """
     Add upstart jobs for zookeeper and kafka (you can add :configuration='configuration files directory')
     """
+    configure_properties(configuration, 'zookeper')
     pass_configuration(configuration, 'kafka_zookeeper')
+    configure_properties(configuration, 'kafka')
     pass_configuration(configuration, 'kafka')
 
 
@@ -49,12 +49,16 @@ def pass_configuration(configuration_path, application_name):
     """
     Put the upstart file in place
     """
-    t='{0}/etc/init/{1}.conf'.format(configuration_path, application_name)
-    print('t is {0}'.format(t))
-    local('ls {0}'.format(t))
     sudo('initctl stop {0}'.format(application_name), warn_only=True)
     put('{0}/etc/init/{1}.conf'.format(configuration_path, application_name), '/etc/init/{0}.conf'.format(application_name), use_sudo=True)
     sudo('initctl start {0}'.format(application_name))
+
+
+def configure_properties(configuration_path, application_name):
+    """
+    Put the Java properties file in place
+    """
+    put('{0}/etc/kafka/{1}.conf'.format(configuration_path, application_name), '/etc/kafka/{0}.conf'.format(application_name), use_sudo=True)
 
 
 @task
