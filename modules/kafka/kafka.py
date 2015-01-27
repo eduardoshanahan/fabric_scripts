@@ -39,7 +39,7 @@ def configure(configuration=env.kafka_configuration_directory):
     """
     Add upstart jobs for zookeeper and kafka (you can add :configuration='configuration files directory')
     """
-    configure_properties(configuration, 'zookeper')
+    configure_properties(configuration, 'zookeeper')
     pass_configuration(configuration, 'kafka_zookeeper')
     configure_properties(configuration, 'kafka')
     pass_configuration(configuration, 'kafka')
