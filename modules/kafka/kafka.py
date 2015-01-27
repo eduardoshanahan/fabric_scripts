@@ -41,7 +41,7 @@ def configure(configuration=env.kafka_configuration_directory):
     """
     configure_properties(configuration, 'zookeeper')
     pass_configuration(configuration, 'kafka_zookeeper')
-    configure_properties(configuration, 'kafka')
+    configure_properties(configuration, 'server')
     pass_configuration(configuration, 'kafka')
 
 
