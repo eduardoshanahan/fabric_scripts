@@ -10,7 +10,7 @@ env.kafka_version = '0.8.2-beta'
 env.kafka_path = '/usr/lib/kafka'
 env.kafka_config_path = '/etc/kafka'
 env.kafka_scala_version = '2.11'
-env.kafka_configuration_directory = 'configuration/kafka'
+env.kafka_local_configuration_directory = 'configuration/kafka'
 
 @task
 def install():
@@ -35,7 +35,7 @@ def ensure_fresh_directory(path):
 
 
 @task
-def configure(configuration=env.kafka_configuration_directory):
+def configure(configuration=env.kafka_local_configuration_directory):
     """
     Add upstart jobs for zookeeper and kafka (you can add :configuration='configuration files directory')
     """
@@ -58,11 +58,14 @@ def configure_properties(configuration_path, application_name):
     """
     Put the Java properties file in place
     """
-    put('{0}/etc/kafka/{1}.properties'.format(configuration_path, application_name), '/etc/kafka/{0}.properties'.format(application_name), use_sudo=True)
+    sudo('mkdir -p {0}'.format(env.kafka_config_path))
+    local_path = '{0}/etc/kafka/{1}.properties'.format(configuration_path, application_name)
+    remote_path = '/etc/kafka/{0}.properties'.format(application_name)
+    put(local_path, remote_path, use_sudo=True)
 
 
 @task
-def full(configuration=env.kafka_configuration_directory):
+def full(configuration=env.kafka_local_configuration_directory):
     """
     Install with requirements and configure (you can add :configuration='configuration files directory')
     """
