@@ -15,6 +15,9 @@ def full():
     """
     Full install with all the requirements
     """
+    import pip
     pip.install()
+    import pyzmq
     pyzmq.install()
     install()
+
