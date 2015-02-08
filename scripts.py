@@ -1,5 +1,6 @@
 from fabric.api import task
 from modules.apache import apache
+from modules.clojure import clojure
 from modules.development import development
 from modules.docker import docker
 from modules.ec2 import ec2
