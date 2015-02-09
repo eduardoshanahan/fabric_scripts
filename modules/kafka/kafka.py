@@ -6,11 +6,13 @@ from fabric.api import sudo
 from fabric.api import task
 from fabric.api import local
 
+
 env.kafka_version = '0.8.2-beta'
 env.kafka_path = '/usr/lib/kafka'
 env.kafka_config_path = '/etc/kafka'
 env.kafka_scala_version = '2.11'
 env.kafka_local_configuration_directory = 'configuration/kafka'
+
 
 @task
 def install():

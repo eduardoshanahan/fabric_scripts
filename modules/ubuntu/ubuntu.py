@@ -2,12 +2,14 @@ from fabric.api import run
 from fabric.api import sudo
 from fabric.api import task
 from fabric.api import env
-from library.host import type
-from library.packages import cleanup
-from library.packages import update
-from library.packages import fix
-from library import hosts
-
+# from library.host import type
+# from library.packages import cleanup
+# from library.packages import update
+# from library.packages import fix
+# from library import hosts
+import host
+import hosts
+import packages
 
 def init(env_details):
     env = env_details

@@ -22,7 +22,7 @@ def install(configuration=env.nginx_configuration_directory):
     sudo('apt-get install -y zlib1g')
     sudo(('adduser '
           '--system '
-          '--no-create-home ' 
+          '--no-create-home '
           '--disabled-login '
           '--disabled-password '
           '--group nginx'))
@@ -43,8 +43,6 @@ def install(configuration=env.nginx_configuration_directory):
         run('make')
         sudo('make install')
     run('rm -rf ~/tmp')
-
-
 
 
 @task
