@@ -17,16 +17,17 @@ def update():
     """
     Ubuntu full update
     """
-    run('mkdir -p ~/tmp')
-    sudo('apt-get clean')
-    sudo('rm -rf /var/lib/apt/lists/*')
-    sudo('apt-get clean')
+    # run('mkdir -p ~/tmp')
+    # sudo('apt-get clean')
+    # sudo('rm -rf /var/lib/apt/lists/*')
+    # sudo('apt-get clean')
+    # sudo('apt-get update')
+    # sudo('apt-get install python-software-properties -y ')
+    # sudo(('DEBIAN_FRONTEND=noninteractive apt-get -y '
+    #       '-o Dpkg::Options::="--force-confdef" '
+    #       '-o Dpkg::Options::="--force-confold" dist-upgrade'))
+    # run('rm -rf ~/tmp')
     sudo('apt-get update')
-    sudo('apt-get install python-software-properties -y ')
-    sudo(('DEBIAN_FRONTEND=noninteractive apt-get -y '
-          '-o Dpkg::Options::="--force-confdef" '
-          '-o Dpkg::Options::="--force-confold" dist-upgrade'))
-    run('rm -rf ~/tmp')
 
 @task
 def fix():
