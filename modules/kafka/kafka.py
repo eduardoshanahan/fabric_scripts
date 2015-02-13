@@ -78,6 +78,16 @@ def full(configuration=env.kafka_local_configuration_directory):
 
 
 @task
+def clear_topics():
+    """
+    Remove all topics from the server
+    """
+    sudo('initctl stop kafka')
+    sudo('rm -rf /tmp/kafka-logs/')
+    sudo('initctl start kafka')
+
+
+@task
 def test():
     """
     Test kafka

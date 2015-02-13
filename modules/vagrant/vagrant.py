@@ -3,15 +3,24 @@ from fabric.api import local
 from fabric.api import task
 
 
+def get_pairs(line):
+    result = line.split('\"')
+    if len(result) == 1:
+        result = line.split()
+    result = [item.lstrip().rstrip() for item in result if item != '']
+    print('the result is', result)
+    return result
+
+
 def set_env(hosted):
     """
     Connect to Vagrant from the host machine
     """
     env.user = 'vagrant'
     config_details = local('vagrant ssh-config', capture=True).splitlines()
-    hosting = [line for line in config_details if 'Host ' in line or 'Port' in line]
+    hosting = [line for line in config_details if 'Host ' in line or 'Port']
     print('Hosts available are',hosting)
-    result = dict((line.split() for line in config_details if line != ''))
+    result = dict((get_pairs(line) for line in config_details if line != ''))
     env.hosts = ['{0}:{1}'.format(result['HostName'], result['Port'])]
     env.key_filename = result['IdentityFile'].replace('"', '')
     if hosted != '':
