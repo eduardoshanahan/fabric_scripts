@@ -9,6 +9,7 @@ from fabric.api import task
 
 env.nginx_configuration_directory = 'configuration/nginx'
 
+
 @task
 def install(configuration=env.nginx_configuration_directory):
     """
@@ -57,3 +58,12 @@ def configure(configuration=env.nginx_configuration_directory):
     sudo('initctl stop nginx', warn_only=True)
     put('{0}/etc/init/nginx.conf'.format(configuration), '/etc/init/nginx.conf', use_sudo=True)
     sudo('initctl start nginx')
+
+
+@task
+def full(configuration=env.nginx_configuration_directory):
+    """
+    Install and configure
+    """
+    install(configuration)
+    configure(configuration)
