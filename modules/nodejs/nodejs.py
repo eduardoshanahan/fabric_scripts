@@ -1,13 +1,13 @@
 from fabric.api import task
 from fabric.api import run
 from fabric.api import sudo
-from fabric.api import env
-from library import bower
-from library import bunyan
-from library import grunt
-from library import nodemon
-from library import tools
-from library import yeoman
+import bower
+import bunyan
+import grunt
+import less
+import nodemon
+import tools
+import yeoman
 
 
 @task
@@ -23,3 +23,12 @@ def install():
     sudo('apt-get update')
     sudo('apt-get install -y nodejs')
     run('mkdir -p .node')
+
+
+@task
+def full():
+    """
+    Install NodeJS and tools
+    """
+    install()
+    tools.full()

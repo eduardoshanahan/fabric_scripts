@@ -5,7 +5,7 @@ from fabric.api import task
 @task
 def install():
     """
-    Yeoman 
+    Yeoman
     """
     run('npm install -g yo')
 

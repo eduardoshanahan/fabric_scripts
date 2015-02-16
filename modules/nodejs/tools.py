@@ -8,12 +8,13 @@ import yeoman
 
 
 @task
-def install():
+def full():
     """
     Install all the tools available
     """
     bower.install()
     bunyan.install()
     grunt.install()
+    less.install()
     nodemon.install()
     yeoman.install()
