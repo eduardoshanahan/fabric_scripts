@@ -11,7 +11,7 @@ import yeoman
 
 
 @task
-def install():
+def install1():
     """
     NodeJS from external package
     """
@@ -20,6 +20,20 @@ def install():
     sudo('apt-get install -y python-software-properties')
     sudo('apt-get install -y software-properties-common')
     sudo('add-apt-repository -y ppa:chris-lea/node.js')
+    sudo('apt-get update')
+    sudo('apt-get install -y nodejs')
+    run('mkdir -p .node')
+
+
+@task
+def install():
+    """
+    NodeJS from external package
+    """
+    run('echo prefix = ~/.node >> ~/.npmrc')
+    run('echo export PATH="$PATH:$HOME/.node/bin" >> ~/.bashrc')
+    sudo('apt-get install -y build-essential')
+    sudo('curl -sL https://deb.nodesource.com/setup | bash -')
     sudo('apt-get update')
     sudo('apt-get install -y nodejs')
     run('mkdir -p .node')
