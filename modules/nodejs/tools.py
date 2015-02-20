@@ -2,6 +2,7 @@ from fabric.api import run
 from fabric.api import task
 import bower
 import bunyan
+import dtrace
 import grunt
 import less
 import nodemon
@@ -15,6 +16,7 @@ def full():
     """
     bower.install()
     bunyan.install()
+    dtrace.install()
     grunt.install()
     less.install()
     nodemon.install()
