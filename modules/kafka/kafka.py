@@ -7,7 +7,7 @@ from fabric.api import task
 from fabric.api import local
 
 
-env.kafka_version = '0.8.2-0'
+env.kafka_version = '0.8.2.0'
 env.kafka_path = '/usr/lib/kafka'
 env.kafka_config_path = '/etc/kafka'
 env.kafka_scala_version = '2.11'
