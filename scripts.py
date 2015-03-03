@@ -3,10 +3,12 @@ from modules.apache import apache
 from modules.clojure import clojure
 from modules.docker import docker
 from modules.ec2 import ec2
+from modules.elasticsearch import elasticsearch
 from modules.git import git
 from modules.java import java
 from modules.jenkins import jenkins
 from modules.kafka import kafka
+from modules.logstash import logstash
 from modules.mongo import mongo
 from modules.mysql import mysql
 from modules.nginx import nginx

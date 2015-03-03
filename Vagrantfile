@@ -5,8 +5,8 @@ Vagrant.configure("2") do |config|
     config.vm.define :"fabric_scripts"
 
     config.vm.synced_folder ".", "/home/vagrant/code"
-
-    config.vm.network "forwarded_port", guest: 3000, host: 8080
+    config.vm.network "private_network", ip: "192.168.65.1"
+    # config.vm.network "forwarded_port", guest: 3000, host: 8080
 
     config.vm.provider :virtualbox do |vb|
         vb.name = "fabric_scripts"
