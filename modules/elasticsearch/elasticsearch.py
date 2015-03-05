@@ -16,6 +16,7 @@ env.elasticsearch_local_configuration_directory = 'configuration/elasticsearch'
 def install():
     """
     From binary
+    curl -X GET http://localhost:9200/
     """
     ensure_fresh_directory(env.elasticsearch_path)
     sudo('chmod a+rw {0}'.format(env.elasticsearch_path))
@@ -41,7 +42,6 @@ def configure(configuration=env.elasticsearch_local_configuration_directory):
     """
     Add upstart job (you can add :configuration='configuration files directory')
     """
-    configure_properties(configuration, 'elasticsearch')
     pass_configuration(configuration, 'elasticsearch')
 
 
@@ -52,16 +52,6 @@ def pass_configuration(configuration_path, application_name):
     sudo('initctl stop {0}'.format(application_name), warn_only=True)
     put('{0}/etc/init/{1}.conf'.format(configuration_path, application_name), '/etc/init/{0}.conf'.format(application_name), use_sudo=True)
     sudo('initctl start {0}'.format(application_name))
-
-
-def configure_properties(configuration_path, application_name):
-    """
-    Put the Java properties file in place
-    """
-    sudo('mkdir -p {0}'.format(env.kafka_config_path))
-    local_path = '{0}{1}/{2}.properties'.format(configuration_path, elasticsearch_config_path, application_name)
-    remote_path = '{0}/{1}.properties'.format(elasticsearch_config_path, application_name)
-    put(local_path, remote_path, use_sudo=True)
 
 
 @task
@@ -81,5 +71,5 @@ def full(configuration=env.elasticsearch_local_configuration_directory):
     from .. import java
     java.java.oracle.jdk.install()
     install()
+    configure(configuration)
     plugins()
-    # configure(configuration)
