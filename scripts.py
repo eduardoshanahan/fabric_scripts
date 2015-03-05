@@ -8,6 +8,7 @@ from modules.git import git
 from modules.java import java
 from modules.jenkins import jenkins
 from modules.kafka import kafka
+from modules.kibana import kibana
 from modules.logstash import logstash
 from modules.mongo import mongo
 from modules.mysql import mysql

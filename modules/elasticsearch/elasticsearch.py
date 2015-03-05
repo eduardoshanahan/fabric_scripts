@@ -6,7 +6,7 @@ from fabric.api import sudo
 from fabric.api import task
 
 
-env.elasticsearch_version_number = '1.4.2'
+env.elasticsearch_version_number = '1.4.4'
 env.elasticsearch_path = '/usr/lib/elasticsearch'
 env.elasticsearch_config_path = '/etc/elasticsearch'
 env.elasticsearch_local_configuration_directory = 'configuration/elasticsearch'
