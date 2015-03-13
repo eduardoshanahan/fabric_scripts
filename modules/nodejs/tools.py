@@ -14,6 +14,8 @@ def full():
     """
     Install all the tools available
     """
+    from .. import git
+    git.git.install()
     bower.install()
     bunyan.install()
     dtrace.install()

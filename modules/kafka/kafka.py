@@ -61,8 +61,8 @@ def configure_properties(configuration_path, application_name):
     Put the Java properties file in place
     """
     sudo('mkdir -p {0}'.format(env.kafka_config_path))
-    local_path = '{0}{1}/{2}.properties'.format(configuration_path, kafka_config_path, application_name)
-    remote_path = '{0}/{1}.properties'.format(kafka_config_path, application_name)
+    local_path = '{0}{1}/{2}.properties'.format(configuration_path, env.kafka_config_path, application_name)
+    remote_path = '{0}/{1}.properties'.format(env.kafka_config_path, application_name)
     put(local_path, remote_path, use_sudo=True)
 
 
