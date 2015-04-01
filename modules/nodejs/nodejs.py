@@ -3,6 +3,7 @@ from fabric.api import run
 from fabric.api import sudo
 import bower
 import bunyan
+import forever
 import grunt
 import less
 import nodemon
