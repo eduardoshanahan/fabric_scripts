@@ -1,4 +1,4 @@
-from fabric.api import run
+from fabric.api import sudo
 from fabric.api import task
 
 
@@ -7,4 +7,4 @@ def install():
     """
     Bunyan logging
     """
-    run('npm install -g forever')
+    sudo('npm install -g forever')

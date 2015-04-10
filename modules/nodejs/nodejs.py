@@ -16,8 +16,8 @@ def install():
     """
     NodeJS from external package
     """
-    run('echo prefix = ~/.node >> ~/.npmrc')
-    run('echo export PATH="$PATH:$HOME/.node/bin" >> ~/.bashrc')
+    # run('echo prefix = ~/.node >> ~/.npmrc')
+    # run('echo export PATH="$PATH:$HOME/.node/bin" >> ~/.bashrc')
     sudo('apt-get install -y build-essential')
     sudo('curl -sL https://deb.nodesource.com/setup_0.12 | bash -')
     sudo('apt-get update')

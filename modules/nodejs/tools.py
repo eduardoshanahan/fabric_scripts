@@ -1,4 +1,3 @@
-from fabric.api import run
 from fabric.api import task
 import bower
 import bunyan
