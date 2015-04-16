@@ -7,4 +7,4 @@ def install():
     """
     Run node apps permanently
     """
-    run('npm install -g nodemon')
+    sudo('npm install -g nodemon')

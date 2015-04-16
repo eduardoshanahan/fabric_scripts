@@ -1,4 +1,4 @@
-from fabric.api import run
+from fabric.api import sudo
 from fabric.api import task
 
 
@@ -7,4 +7,4 @@ def install():
     """
     Bower from npm
     """
-    run('npm install -g bower')
+    sudo('npm install -g bower')

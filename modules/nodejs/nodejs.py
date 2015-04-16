@@ -17,12 +17,21 @@ def install():
     """
     run('echo prefix = ~/.node >> ~/.npmrc')
     run('echo export PATH="$PATH:$HOME/.node/bin" >> ~/.bashrc')
-    sudo('apt-get install -y build-essential')
     sudo('curl -sL https://deb.nodesource.com/setup_0.12 | bash -')
     sudo('apt-get update')
     sudo('apt-get install -y nodejs')
     run('mkdir -p .node')
 
+
+@task
+def prerequisites():
+    """
+    All the tools required to install and run
+    """
+    from .. import tools
+    tools.build_essential.install()
+    from .. import git
+    git.git.install()
 
 @task
 def full():

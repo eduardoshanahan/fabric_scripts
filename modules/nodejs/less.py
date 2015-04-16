@@ -1,5 +1,5 @@
 from fabric.api import task
-from fabric.api import run
+from fabric.api import sudo
 
 
 @task
@@ -7,4 +7,4 @@ def install():
     """
     Install from npm
     """
-    run('npm install -g less')
+    sudo('npm install -g less')

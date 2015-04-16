@@ -61,9 +61,19 @@ def configure(configuration=env.nginx_configuration_directory):
 
 
 @task
+def prerequisites():
+  """
+  Tools needed for Nginx to be installed and working
+  """
+  from .. import tools
+  tools.make.install()
+
+
+@task
 def full(configuration=env.nginx_configuration_directory):
     """
     Install and configure
     """
+    prerequisites()
     install(configuration)
     configure(configuration)
