@@ -5,6 +5,6 @@ from fabric.api import sudo
 @task
 def install():
     """
-    Apache from package
+    Install from package
     """
-    sudo ('apt-get install -y apache2')
+    sudo('sudo apt-get install -y ant')

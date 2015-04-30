@@ -60,7 +60,9 @@ def plugins():
     Usual plugins
     """
     with cd('{0}'.format(env.elasticsearch_path)):
+        run('bin/plugin --install mobz/elasticsearch-head')
         run('bin/plugin -install lmenezes/elasticsearch-kopf')
+        run('bin/plugin --install elasticsearch/marvel/latest')
 
 
 @task
