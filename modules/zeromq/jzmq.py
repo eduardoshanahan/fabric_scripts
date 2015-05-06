@@ -25,3 +25,21 @@ def install():
     run('rm -rf ~/tmp')
     sudo(('echo export LD_LIBRARY_PATH=/usr/local/lib'
           ' > /etc/profile.d/ldlibrarypath.sh'))
+
+
+@task
+def prerequisites():
+    """
+    Tools required
+    """
+    from . import zeromq
+    zeromq.install()
+
+
+@task
+def full():
+    """
+    Everything installed
+    """
+    prerequisites()
+    install()
