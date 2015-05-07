@@ -7,6 +7,7 @@ import grunt
 import less
 import nodemon
 import yeoman
+import zmq
 
 
 @task

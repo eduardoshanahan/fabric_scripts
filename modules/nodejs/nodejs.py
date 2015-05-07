@@ -21,9 +21,9 @@ def install():
     sudo('curl -sL https://deb.nodesource.com/setup_0.12 | bash -')
     sudo('apt-get update')
     sudo('apt-get install -y nodejs')
-    run('mkdir -p .node')
-    run('mkdir -p .npm')
-    run('mkdir -p .config')
+    # run('mkdir -p .node')
+    # run('mkdir -p .npm')
+    # run('mkdir -p .config')
 
 
 @task
