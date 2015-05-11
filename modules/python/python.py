@@ -8,6 +8,7 @@ from library import pyzmq
 from library import redis
 from library import tools
 from library import watchdog
+from library.root_path import root_path
 
 
 @task
