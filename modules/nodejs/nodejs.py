@@ -27,6 +27,13 @@ def install():
 
 
 @task
+def ensure_directory_access():
+    """
+    Make sure that all directories needed are accessible
+    """
+    sudo('chmod -R a+rw ~/.npm')
+
+@task
 def prerequisites():
     """
     Get what you need to install and run
@@ -42,4 +49,5 @@ def full():
     """
     prerequisites()
     install()
+    ensure_directory_access()
     tools.full()
