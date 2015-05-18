@@ -26,3 +26,23 @@ def install():
         sudo('make install')
         sudo('ldconfig')
     run('rm -rf ~/tmp')
+
+
+@task
+def prerequisites():
+    """
+    Tools required
+    """
+    from .. import tools
+    tools.make.install()
+    tools.autoconf.install()
+    tools.gplusplus.full()
+
+
+@task
+def full():
+    """
+    Full install
+    """
+    prerequisites()
+    install()

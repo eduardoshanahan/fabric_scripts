@@ -20,6 +20,7 @@ from modules.redis import redis
 from modules.ruby import ruby
 from modules.scala import scala
 from modules.stridercd import stridercd
+from modules.synapse import synapse
 from modules import tools
 from modules.ubuntu import ubuntu
 from modules.vagrant import vagrant

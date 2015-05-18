@@ -1,4 +1,4 @@
-from fabric.api import run
+from fabric.api import sudo
 from fabric.api import task
 
 
@@ -7,4 +7,4 @@ def install():
     """
     Dtrace provider
     """
-    run('npm install -g dtrace-provider')
+    sudo('npm install -g dtrace-provider')

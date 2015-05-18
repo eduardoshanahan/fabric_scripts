@@ -7,4 +7,4 @@ def install():
     """
     Install from package
     """
-    sudo('sudo apt-get install make')
+    sudo('sudo apt-get install -y make')

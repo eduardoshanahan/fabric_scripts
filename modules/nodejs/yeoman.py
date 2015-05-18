@@ -1,4 +1,4 @@
-from fabric.api import run
+from fabric.api import sudo
 from fabric.api import task
 
 
@@ -7,7 +7,7 @@ def install():
     """
     Yeoman
     """
-    run('npm install -g yo')
+    sudo('npm install -g yo')
 
 
 @task
@@ -15,4 +15,4 @@ def generators():
     """
     Generators for Yeoman
     """
-    run('npm install -g generator-angular')
+    sudo('npm install -g generator-angular')

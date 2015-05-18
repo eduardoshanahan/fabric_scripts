@@ -57,7 +57,22 @@ def configure(configuration=env.nginx_configuration_directory):
     put('{0}/opt/nginx/conf/nginx.conf'.format(configuration), '/opt/nginx/conf/nginx.conf', use_sudo=True)
     sudo('initctl stop nginx', warn_only=True)
     put('{0}/etc/init/nginx.conf'.format(configuration), '/etc/init/nginx.conf', use_sudo=True)
+
+
+@task
+def start():
+    """
+    Fire off the service
+    """
     sudo('initctl start nginx')
+
+@task
+def prerequisites():
+    """
+    Tools needed for Nginx to be installed and working
+    """
+    from .. import tools
+    tools.make.install()
 
 
 @task
@@ -65,5 +80,7 @@ def full(configuration=env.nginx_configuration_directory):
     """
     Install and configure
     """
+    prerequisites()
     install(configuration)
     configure(configuration)
+    start()

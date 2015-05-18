@@ -60,7 +60,9 @@ def plugins():
     Usual plugins
     """
     with cd('{0}'.format(env.elasticsearch_path)):
+        run('bin/plugin --install mobz/elasticsearch-head')
         run('bin/plugin -install lmenezes/elasticsearch-kopf')
+        run('bin/plugin --install elasticsearch/marvel/latest')
 
 
 @task
@@ -73,3 +75,4 @@ def full(configuration=env.elasticsearch_local_configuration_directory):
     install()
     configure(configuration)
     plugins()
+    sudo('initctl start elasticsearch', warn_only=True)

@@ -5,6 +5,6 @@ from fabric.api import task
 @task
 def install():
     """
-    Install from npm
+    Run node apps permanently
     """
-    sudo('npm install -g less')
+    sudo('npm install -g forever')

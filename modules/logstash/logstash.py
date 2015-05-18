@@ -26,7 +26,6 @@ def install():
     sudo('rm -rf {0}/logstash-{1}'.format(env.logstash_path, env.logstash_version_number))
 
 
-
 def ensure_fresh_directory(path):
     """
     Remove a directory and create it again
@@ -39,8 +38,18 @@ def ensure_fresh_directory(path):
 def configure(configuration=env.logstash_local_configuration_directory):
     """
     Add upstart job (you can add :configuration='configuration files directory')
-    """
+    """ 
+    sudo('mkdir -p {0}'.format(env.logstash_config_path))
+    put('{0}{1}/logstash.conf'.format(configuration, env.logstash_config_path), '{0}'.format(env.logstash_config_path), use_sudo=True)
     pass_configuration(configuration, 'logstash')
+
+
+@task
+def start():
+    """
+    Fire off the service
+    """
+    sudo('initctl start logstash', warn_only=True)
 
 
 def pass_configuration(configuration_path, application_name):
@@ -61,3 +70,4 @@ def full(configuration=env.logstash_local_configuration_directory):
     java.java.oracle.jdk.install()
     install()
     configure(configuration)
+    start()
