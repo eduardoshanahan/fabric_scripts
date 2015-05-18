@@ -67,9 +67,7 @@ Just follow the instrucctions on the page.
 
 I installed Fabric using pip (`pip install fabric`). After all is done, a call for `fab --version` should answer `Fabric 1.10.0 or newer`.
 
-After all the tools are installed, we are going to script the whole deployment makingFabric scripts. In the case of Vagrant, after the machine is fired up, you can install tools automatically, and doing that will require extra Vagrant tools. With an Ubuntu host, you might need a [plugin](https://github.com/wutali/vagrant-fabric) to do provisioning from Fabric
-
-This covers all the basic tools we are going to use. Lets talk tomorrow to see if there are any problems during installation.
+After all the tools are installed, we are going to script the whole deployment makingFabric scripts. In the case of Vagrant, after the machine is fired up, you can install tools automatically, and doing that will require extra Vagrant tools. With an Ubuntu host, you might need a [plugin](https://github.com/wutali/vagrant-fabric) to do provisioning from Fabric.
 
 
 ## [Vagrant plugin](https://github.com/wutali/vagrant-fabric)
@@ -78,19 +76,4 @@ To have the machine doing automatic provisioning, we will probably need a plugin
 
 `vagrant plugin install vagrant-fabric`
 
-## Working with the Vagrant machine
 
-With all the tools installed, and the code retrieved from git:
-
-`cd /code/deployment/vagrant`
-`vagrant up`
-
-should be working for a while, and eventually finish with a message about mounting shared folders.
-
-If there are no big errors (right now I am getting two warnings about Virtual Box Guest Additions, although I am sure that is ok in my machine), you should be able to do an
-
-`vagrant ssh' and get a shell session to the new machine. 
-
-`ls` should show the directory `code`, because the vagrantfile is saying that the `/code` directory are shared with the virtual instance. `exit` will get you back in your local machine.
-
-As a first step into deployment, lets try `fab vagrant install_tools`.

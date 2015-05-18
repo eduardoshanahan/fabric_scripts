@@ -24,10 +24,12 @@ def install():
     run('mkdir -p .node')
 
 
+
 @task
 def full():
     """
     Install NodeJS and tools
     """
+
     install()
     tools.full()
