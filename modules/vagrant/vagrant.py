@@ -71,7 +71,7 @@ def install():
     """
     Package from source
     """
-    sudo('apt-get instal dpkg -y')
+    sudo('apt-get install dpkg -y')
     run('wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb')
     run('dpkg -i vagrant_1.7.2_x86_64.deb')
     sudo('apt-get install linux-headers-$(uname -r)')
