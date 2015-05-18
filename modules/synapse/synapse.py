@@ -12,4 +12,4 @@ def install():
     """
     sudo('apt-add-repository ppa:synapse-core/testing')
     sudo('apt-get update')
-    sudo(apt-get install synapse)
+    sudo('apt-get install synapse')
