@@ -42,7 +42,6 @@ def prerequisites():
     tools.build_essential.install()
 
 
-
 @task
 def full():
     """
