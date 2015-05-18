@@ -63,7 +63,7 @@ def prerequisites():
     Tools required
     """
     from .. import virtualbox
-    virtualbox.install()
+    virtualbox.virtualbox.install()
 
 
 @task
