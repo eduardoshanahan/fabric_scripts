@@ -51,6 +51,7 @@ def configure(configuration=env.nginx_configuration_directory):
     """
     Create the config file to host the application (you can add :configuration='configuration files directory')
     """
+    run('ls')
     sudo('touch /opt/nginx/conf/nginx.conf')
     sudo('mkdir -p /opt/nginx/conf/backup')
     sudo('mv --backup=numbered /opt/nginx/conf/nginx.conf /opt/nginx/conf/backup')
@@ -65,6 +66,7 @@ def start():
     Fire off the service
     """
     sudo('initctl start nginx')
+
 
 @task
 def prerequisites():
