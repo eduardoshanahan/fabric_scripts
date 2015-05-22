@@ -1,5 +1,7 @@
 from fabric.api import env
 from fabric.api import local
+from fabric.api import run
+from fabric.api import sudo
 from fabric.api import task
 
 
@@ -53,3 +55,33 @@ def cleanup():
     Remove invalid machines
     """
     local('vagrant global-status --prune')
+
+
+@task
+def prerequisites():
+    """
+    Tools required
+    """
+    from .. import virtualbox
+    virtualbox.virtualbox.install()
+
+
+@task
+def install():
+    """
+    Package from source
+    """
+    sudo('apt-get install dpkg -y')
+    run('wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb')
+    run('dpkg -i vagrant_1.7.2_x86_64.deb')
+    sudo('apt-get install linux-headers-$(uname -r)')
+    sudo('sudo dpkg-reconfigure virtualbox-dkms')
+
+
+@task
+def full():
+    """
+    Install everything to be running
+    """
+    prerequisites()
+    install()

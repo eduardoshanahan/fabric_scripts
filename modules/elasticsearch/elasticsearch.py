@@ -75,3 +75,4 @@ def full(configuration=env.elasticsearch_local_configuration_directory):
     install()
     configure(configuration)
     plugins()
+    sudo('initctl start elasticsearch', warn_only=True)
