@@ -21,6 +21,7 @@ def install():
     sudo('curl -sL https://deb.nodesource.com/setup_0.12 | bash -')
     sudo('apt-get update')
     sudo('apt-get install -y nodejs')
+    ensure_directory_access()
     # run('mkdir -p .node')
     # run('mkdir -p .npm')
     # run('mkdir -p .config')
@@ -31,6 +32,7 @@ def ensure_directory_access():
     """
     Make sure that all directories needed are accessible
     """
+    sudo('mkdir -p ~/.npm')
     sudo('chmod -R a+rw ~/.npm')
 
 @task
@@ -49,5 +51,4 @@ def full():
     """
     prerequisites()
     install()
-    ensure_directory_access()
     tools.full()
