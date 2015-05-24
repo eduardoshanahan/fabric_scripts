@@ -42,6 +42,8 @@ def prerequisites():
     """
     from .. import tools
     tools.build_essential.install()
+    from .. import git
+    git.git.install()
 
 
 @task
@@ -51,4 +53,12 @@ def full():
     """
     prerequisites()
     install()
+
+
+@task
+def full_and_tools():
+    """
+    Node and the usual tools
+    """
+    full()
     tools.full()
