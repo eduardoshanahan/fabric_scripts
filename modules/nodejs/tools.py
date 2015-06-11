@@ -3,6 +3,7 @@ import bower
 import bunyan
 import dtrace
 import forever
+import jshint
 import grunt
 import less
 import nodemon
@@ -32,6 +33,7 @@ def full():
     dtrace.install()
     forever.install()
     grunt.install()
+    jshint.install()
     less.install()
     nodemon.install()
     yeoman.install()
