@@ -7,6 +7,7 @@ import jshint
 import grunt
 import less
 import nodemon
+import pm2
 import yeoman
 import zmq
 
@@ -35,5 +36,6 @@ def full():
     grunt.install()
     jshint.install()
     less.install()
+    pm2.install()
     nodemon.install()
     yeoman.install()

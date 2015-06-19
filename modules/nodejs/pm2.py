@@ -5,7 +5,6 @@ from fabric.api import task
 @task
 def install():
     """
-    Bunyan logging
+    Process Manager 2
     """
-    sudo('npm install -g bunyan')
-    
+    sudo('npm install -g pm2')

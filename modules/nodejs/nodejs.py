@@ -7,6 +7,7 @@ import forever
 import grunt
 import less
 import nodemon
+import pm2
 import tools
 import yeoman
 
