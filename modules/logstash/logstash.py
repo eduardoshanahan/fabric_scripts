@@ -5,7 +5,7 @@ from fabric.api import sudo
 from fabric.api import task
 
 
-env.logstash_version_number = '1.4.2'
+env.logstash_version_number = '1.5.1'
 env.logstash_path = '/usr/lib/logstash'
 env.logstash_config_path = '/etc/logstash'
 env.logstash_local_configuration_directory = 'configuration/logstash'
