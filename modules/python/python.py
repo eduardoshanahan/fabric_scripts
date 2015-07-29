@@ -3,6 +3,7 @@ from fabric.api import run
 from library import docopt
 from library import locust
 from library import pip
+from library import profilehooks
 from library import python_dev
 from library import python_fabric
 from library import pyzmq

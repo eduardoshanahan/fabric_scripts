@@ -13,3 +13,4 @@ def install():
     python_dev.install()
     redis.install()
     watchdog.install()
+    profilehooks.install()
